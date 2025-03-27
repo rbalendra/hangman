@@ -6,11 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hangman Game by RB</title>
         <link rel="stylesheet" href="./style.css">
-        <script src="./script.js" defer></script>
+        <script src="./script.js" defer type="module"></script>
     </head>
 
     <body>
 
+        <div class="hangman-container">
+            <h1>HANGMAN</h1>
+            <img id="hangman-img" src="./assets/img/h-0.jpg" alt="hangman image">
+            <div id="hangman-words"></div>
+            <div id="hangman-alphabet"> </div>
+            <p id="hangman-message">Click a letter to start</p>
+            <button id="hangman-btn">Play Again</button>
+
+        </div>
     </body>
 
 </html>
