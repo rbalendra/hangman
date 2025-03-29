@@ -206,6 +206,8 @@ let remainingGuesses = 10; //this will be used to store the letters that have be
 
 
 //https://stackoverflow.com/questions/16065579/generate-a-random-word-from-an-array-and-then-print-it-to-the-console-log-in-a-f
+
+/* this function will iterate through the words array and choose a random word from it. it will then create an array of underscores that is the same length as the word. it will then return the random word and the array of underscores. */
 export const wordSelect = (words) => {
     const randomWordList = words[Math.floor(Math.random() * words.length)]; 
     let showWord = [];
@@ -220,4 +222,15 @@ export const wordSelect = (words) => {
         showWord
     }
 }
+
+
+export const guessLetter = (letter) => {
+    if (guessedLetters.includes(letter)) {
+        console.log(`Letter ${letter} has been already guessed`);
+        return;
+    }
+    guessedLetters.push(letter);
+console.log("Guessed Letters", guessedLetters)
+}
+
 

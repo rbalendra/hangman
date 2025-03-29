@@ -31,7 +31,6 @@ h1{
     height: 500px;
     margin: 0 auto;
     display: block;
-    border: 2px solid #000;
 }
 
 
@@ -47,18 +46,31 @@ p{
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0;
-  
-    & button{
-        margin: 5px;
-        padding: 10px 15px;
-        font-size: 1.5rem;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
 }
+
+#hangman-alphabet button{
+
+    margin: 5px;    
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    background-color: #4CAF50;
+     color: white;
+    border: none;
+    width: 50px;
+    border: 2px solid #26772a;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+
+#hangman-alphabet button:disabled {
+    
+    color:#8ec790;
+    border: 2px solid orangered;
+}
+
 
 #hangman-btn{
     display: block;
@@ -81,3 +93,4 @@ p{
     padding: 10px;;
     color: orange;
 }
+
