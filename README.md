@@ -32,3 +32,15 @@ setup: index.html/style.css/script.js <=> dom.js + gamelogic.js
 2. Need to display buttons of all the alphabets: in DOM
 3. blank letter placeholders for randomly selected word
 4. Show the starting image
+
+v2) Page loads and script.js loads - chooses random word - displayhs underscores for each letter - creates letters
+
+    Player clicks button
+    - The letter is stored in guessedLetters
+    - if correct, underscores are replaced with the letter
+    - if wrong hangman image updates and guesses decrease
+    - game checks for win when all letters guessed or lose (0 guesses left)
+
+    Game ends
+    - all buttons disabled
+    - updated message shows win or lose

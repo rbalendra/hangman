@@ -202,35 +202,36 @@ export const wordslist = [
 ];
 
 let guessedLetters = []; //this will be used to store the letters that have been guessed
-let remainingGuesses = 10; //this will be used to store the letters that have been guessed incorrectly
+let remainingGuesses = 10; //this will store remaining incorrect guesses count
 
 
-//https://stackoverflow.com/questions/16065579/generate-a-random-word-from-an-array-and-then-print-it-to-the-console-log-in-a-f
 
-/* this function will iterate through the words array and choose a random word from it. it will then create an array of underscores that is the same length as the word. it will then return the random word and the array of underscores. */
+/* this function will iterate through the words array and choose a random word from it. it will then create an array of underscores that is the same length as the word. it will then return the random word and the array of underscores.
+
+This is the #1 function thhat will run */
 export const wordSelect = (words) => {
     const randomWordList = words[Math.floor(Math.random() * words.length)]; 
-    let showWord = [];
+    let underscores = [];
     for (let i = 0; i < randomWordList.length; i++) {
-        showWord.push("_"); 
+        underscores.push("_"); 
     }
-    console.log(randomWordList);
-    console.log(showWord);
+    console.log(randomWordList); //checking if it works in console
+    console.log(underscores); //checking if it works in console
 
     return {
         randomWordList,
-        showWord
+        underscores
     }
 }
 
-
+//this function will be used to check if the letter has already been guessed. if it has, it will return true. 
 export const guessLetter = (letter) => {
     if (guessedLetters.includes(letter)) {
-        console.log(`Letter ${letter} has been already guessed`);
-        return;
+        // console.log(`Letter ${letter} has been already guessed`); wont show in console because I have disabled the event target button after the first click. 
+        return; //exit if its alrready guesssed
     }
-    guessedLetters.push(letter);
-console.log("Guessed Letters", guessedLetters)
+    guessedLetters.push(letter); //this will add the letter to the guessed letters array
+        console.log("Guessed Letters", guessedLetters)
 }
 
 
