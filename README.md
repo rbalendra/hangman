@@ -41,11 +41,11 @@ Game ends - all buttons disabled - updated message shows win or lose
 
 v3) Current flow of things.
 
-(1) wordSelect() from gamelogic.js: selects random word & create underscores
-(2) updateWordDisplay from dom.js: displays underscores on screen
-(3) updateHangmanImage(0) from dom.js will show the initial image
-(4) initialiseAlphabetButtons() from dom.js creates the A-Z buttons with event listeners
-(5) Now the game is ready for input from user
+1. wordSelect() from gamelogic.js: selects random word & create underscores
+2. updateWordDisplay from dom.js: displays underscores on screen
+3. updateHangmanImage(0) from dom.js will show the initial image
+4. initialiseAlphabetButtons() from dom.js creates the A-Z buttons with event listeners
+5. Now the game is ready for input from user
 
 - user clicks letter button
 - button gets disabled
