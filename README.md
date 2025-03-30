@@ -33,14 +33,28 @@ setup: index.html/style.css/script.js <=> dom.js + gamelogic.js
 3. blank letter placeholders for randomly selected word
 4. Show the starting image
 
-v2) Page loads and script.js loads - chooses random word - displayhs underscores for each letter - creates letters
+v2) Page loads and script.js loads - chooses random word - displays underscores for each letter - creates letters
 
-    Player clicks button
-    - The letter is stored in guessedLetters
-    - if correct, underscores are replaced with the letter
-    - if wrong hangman image updates and guesses decrease
-    - game checks for win when all letters guessed or lose (0 guesses left)
+Player clicks button - The letter is stored in guessedLetters - if correct, underscores are replaced with the letter - if wrong hangman image updates and guesses decrease - game checks for win when all letters guessed or lose (0 guesses left)
 
-    Game ends
-    - all buttons disabled
-    - updated message shows win or lose
+Game ends - all buttons disabled - updated message shows win or lose
+
+v3) Current flow of things.
+
+(1) wordSelect() from gamelogic.js: selects random word & create underscores
+(2) updateWordDisplay from dom.js: displays underscores on screen
+(3) updateHangmanImage(0) from dom.js will show the initial image
+(4) initialiseAlphabetButtons() from dom.js creates the A-Z buttons with event listeners
+(5) Now the game is ready for input from user
+
+- user clicks letter button
+- button gets disabled
+- guessLetter() from gamelogic.js records guessed letter
+- checkLetterinWord() from gamelogic.js checks if the letter is in word
+  - if found updateWordDisplay() from dom.js then update display with letter
+  - if not found decrease remainingGuesses and update hangman image
+- updateGameStatus() from dom.js checks for win/loss condition
+  - if won display congragulations and disable all buttons
+  - if lost display game over and disable all buttons
+- user can click 'play again'
+- Page reloads and new game starts

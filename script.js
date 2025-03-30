@@ -1,20 +1,17 @@
-import { wordSelect, wordslist, guessLetter } from "./gamelogic.js"; //
-import { updateWordDisplay, initialiseAlphabetButtons} from "./dom.js";
+import { wordSelect, wordslist } from "./gamelogic.js"; //
+import { updateWordDisplay, updateHangmanImage, initialiseAlphabetButtons} from "./dom.js";
 
 //created an object to store the game state where the remaining guesses will be stored
 const gameState = {
     remainingGuesses:10
 };
-
-//WOrd selection and underscore creation and calls gamelogic.js
-const result = wordSelect(wordslist);  //here we store the results of the wordSelect function in a variable called result
-const randomWordList = result.randomWordList; //this will store the random word that is selected from the words array
-const showWord = result.underscores; //this will store the array of underscores that is the same length as the word
+const { randomWord, underscores } = wordSelect(wordslist);
 
 
-console.log(randomWordList); //this will log the random word to the console
-updateWordDisplay(showWord); //this will update the word display with the underscores by calling it from dom.js
+updateWordDisplay(underscores)
 
-//here this function calls the dom.js for A-Z button setup and event listener setup
-initialiseAlphabetButtons(randomWordList, showWord,gameState)
+updateHangmanImage(0)//the (0) means that the first image will be displayed. The first image is the hangman with no body parts.
 
+//
+initialiseAlphabetButtons(randomWord,underscores,gameState)
+//select the word from the wordslist array and create an array of underscores that is the same length as the word. this will be used to display the word to the user. The randomWord will be used to check if the letter guessed is in the word or not. The underscores will be used to display the word to the user. The gameState will be used to keep track of the remaining guesses. The gameState will be passed to the initialiseAlphabetButtons function to keep track of the remaining guesses.

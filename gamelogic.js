@@ -202,7 +202,7 @@ export const wordslist = [
 ];
 
 let guessedLetters = []; //this will be used to store the letters that have been guessed
-let remainingGuesses = 10; //this will store remaining incorrect guesses count
+let remainingGuesses = 10; //incorrect guesses will be deducted from this number.
 
 
 
@@ -210,16 +210,16 @@ let remainingGuesses = 10; //this will store remaining incorrect guesses count
 
 This is the #1 function thhat will run */
 export const wordSelect = (words) => {
-    const randomWordList = words[Math.floor(Math.random() * words.length)]; 
+    const randomWord = words[Math.floor(Math.random() * words.length)]; 
     let underscores = [];
-    for (let i = 0; i < randomWordList.length; i++) {
+    for (let i = 0; i < randomWord.length; i++) {
         underscores.push("_"); 
     }
-    console.log(randomWordList); //checking if it works in console
-    console.log(underscores); //checking if it works in console
+    console.log(randomWord); 
+    console.log(underscores); 
 
     return {
-        randomWordList,
+        randomWord,
         underscores
     }
 }
@@ -231,7 +231,23 @@ export const guessLetter = (letter) => {
         return; //exit if its alrready guesssed
     }
     guessedLetters.push(letter); //this will add the letter to the guessed letters array
-        console.log("Guessed Letters", guessedLetters)
+        console.log("Guessed Letters (from gamelogic.js)", guessedLetters)
+}
+
+//this function will be used to check if the letter is in the word. if it is, it will replace the underscore with the letter. 
+export const checkLetterInWord = (letter, randomWord, showWord) => {
+    let found = false; //this will be used to check if the letter is in the word. if it is, it will be set to true.
+    const lowerCaseLetter = letter.toLowerCase();
+    for (let i = 0; i < randomWord.length; i++) { 
+         if (randomWord[i] === lowerCaseLetter) {
+            // console.log(randomWord[i]); //checking if it works in console{
+             showWord[i] = lowerCaseLetter; 
+             found = true;
+        }
+    }
+     return found; 
 }
 
 
+
+// checkLetterInWord('r', 'rugby', '_');
