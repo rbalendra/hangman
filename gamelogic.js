@@ -215,8 +215,8 @@ export const wordSelect = (words) => {
     for (let i = 0; i < randomWord.length; i++) {
         underscores.push("_"); 
     }
-    console.log(randomWord); 
-    console.log(underscores); 
+    // console.log(randomWord); 
+    // console.log(underscores); 
 
     return {
         randomWord,
@@ -231,7 +231,7 @@ export const guessLetter = (letter) => {
         return; //exit if its alrready guesssed
     }
     guessedLetters.push(letter); //this will add the letter to the guessed letters array
-        console.log("Guessed Letters (from gamelogic.js)", guessedLetters)
+        console.log("Guessed Letters array (from gamelogic.js)", guessedLetters)
 }
 
 //this function will be used to check if the letter is in the word. if it is, it will replace the underscore with the letter. 

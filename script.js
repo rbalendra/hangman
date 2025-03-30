@@ -6,6 +6,7 @@ const gameState = {
     remainingGuesses:10
 };
 const { randomWord, underscores } = wordSelect(wordslist);
+console.log(`The chosen word is = [${randomWord}], [${underscores}]`); 
 
 
 updateWordDisplay(underscores)
