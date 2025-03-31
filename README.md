@@ -58,3 +58,8 @@ v3) Current flow of things.
   - if lost display game over and disable all buttons
 - user can click 'play again'
 - Page reloads and new game starts
+
+TO BE ADDED
+
+- a decrement counter showing remaining moves in the DOM
+- keyboard functionality

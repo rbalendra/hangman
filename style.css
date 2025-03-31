@@ -43,10 +43,10 @@ h1{
     margin: 0 auto;
     display: block;
     padding: 20px;
-    background: linear-gradient(225deg, #ffffff, #f0f0f0);
-        box-shadow: -20px 20px 60px #bebebe,
-            20px -20px 60px #ffffff;
-        border: 2px solid #ffffff;
+    border-radius: 32px;
+        /* background: linear-gradient(145deg, #e4e4e4, #ffffff); */
+        box-shadow: 5px 5px 12px #dcdcdc,
+            -5px -5px 12px #ffffff;
 }
 
 
