@@ -16,9 +16,7 @@ export function updateHangmanImage(wrongGuessCount){
     hangmanImage.src = `./assets/img/h-${wrongGuessCount}.jpg`;
 }
 
-
 /*--------------------------------------------------------------------*/
-
 
 // #3 this function is what will create the A-Z buttons and sets up event listeners for each button.
 export function initialiseAlphabetButtons(randomWord, showWord, gameState) {
@@ -45,7 +43,6 @@ export function initialiseAlphabetButtons(randomWord, showWord, gameState) {
             updateWordDisplay(showWord);
         
             //if letter was not found, update the remaining guess and hagnman image
-            
             if (letterFound === false) { //wont be executed if the letter is found in the ShowWord array or evalues to true.
                 gameState.remainingGuesses--; //this will decrease the remaining guesses by 1 from 10 if the letter is not found in the word.
                 console.log(`remaining guesses ${gameState.remainingGuesses}`)
@@ -53,7 +50,7 @@ export function initialiseAlphabetButtons(randomWord, showWord, gameState) {
                 console.log(`count of wrong guesses ${wrongGuesses}`)
                 updateHangmanImage(wrongGuesses); //this will update the hangman image based on the number of wrong guesses.
             }
-            updateGameStatus(showWord, gameState);//
+            updateGameStatus(showWord, gameState, randomWord);//
         });
         alphabetButtons.appendChild(button); // Append the button to the alphabet container
     });
@@ -61,14 +58,15 @@ export function initialiseAlphabetButtons(randomWord, showWord, gameState) {
 
 /*--------------------------------------------------------------------*/
 
-
 //Function to update game status and disable the buttons if necessary
-function updateGameStatus(showWord, gameState) {
+function updateGameStatus(showWord, gameState, randomWord) {
     if (showWord.includes("_") === false) {
-        message.textContent = "congragulations";
+        message.textContent = "Congratulations!";
+        wordDisplay.textContent = `The word was: ${randomWord}`;
         disableAlphabetButtons();
     } else if (gameState.remainingGuesses <= 0) {
-        message.textContent = "game over";
+        message.textContent = "Game Over!";
+        wordDisplay.textContent = `The word was: ${randomWord}`;
         disableAlphabetButtons();
     }
 }
