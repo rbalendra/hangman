@@ -28,8 +28,8 @@ There is a word list provided, feel free to modify it as you see fit.
 ## HANGMAN GAME
 
 ![alt text](./assets/image.png)
-v1)
-setup: index.html/style.css/script.js <=> dom.js + gamelogic.js
+
+v1) setup: index.html/style.css/script.js <=> dom.js + gamelogic.js
 
 1. Start the game with empty elements (render to dom)
 2. Need to display buttons of all the alphabets: in DOM
