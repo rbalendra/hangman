@@ -25,6 +25,9 @@ There is a word list provided, feel free to modify it as you see fit.
 - Allow keyboard input
 - Keep track of words that have been used already and display them on the screen
 
+## HANGMAN GAME
+
+![alt text](./assets/image.png)
 v1)
 setup: index.html/style.css/script.js <=> dom.js + gamelogic.js
 
