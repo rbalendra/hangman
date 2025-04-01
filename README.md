@@ -28,6 +28,7 @@ There is a word list provided, feel free to modify it as you see fit.
 ## HANGMAN GAME
 
 ![alt text](./assets/image.png)
+![alt text](./assets/image2.png)
 
 v1) setup: index.html/style.css/script.js <=> dom.js + gamelogic.js
 
